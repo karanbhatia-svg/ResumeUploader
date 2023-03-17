@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div>
+    <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+    </div>
+  </nav>
+
+<div class="col-sm-4">
+    <h4 class="text-center mb-3"><u>List of Candidate</u></h4>
+    <h4 class="text-center mb-3"><u>No. of candidates:{{ count }}</u></h4>
+    {% for candidate in candidates %}
+     {{candidate.id}} : <a href="{% url 'candidate' candidate.id %}">{{candidate.name}}</a>
+     <hr>
+    {% endfor %}
+   </div>
+  </div>
+<script src="https://kit.fontawesome.com/1f7863e279.js" crossorigin="anonymous"></script>
